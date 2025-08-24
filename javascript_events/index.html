@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-toggle-container">
+        <button id="theme-toggle" class="theme-btn">Dark Mode</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Interactive Web Application</h1>
+            <p>Explore various interactive features and form validation</p>
+        </header>
+
+        <section class="interactive-section">
+            <h2>Interactive Features</h2>
+            
+            <div class="feature-box">
+                <h3>Counter Game</h3>
+                <div class="counter-display">
+                    <span id="counter-value">0</span>
+                </div>
+                <div class="counter-controls">
+                    <button id="decrement-btn" class="btn btn-danger">-</button>
+                    <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                    <button id="increment-btn" class="btn btn-success">+</button>
+                </div>
+                <p>High Score: <span id="high-score">0</span></p>
+            </div>
+
+            <div class="feature-box">
+                <h3>FAQ Section</h3>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">What is JavaScript event handling?</button>
+                        <div class="faq-answer">
+                            <p>Event handling allows JavaScript to respond to user interactions like clicks, keyboard input, and mouse movements, making web pages interactive and dynamic.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do event listeners work?</button>
+                        <div class="faq-answer">
+                            <p>Event listeners are functions that wait for specific events to occur on elements, then execute code in response. They're attached using addEventListener() method.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What is DOM manipulation?</button>
+                        <div class="faq-answer">
+                            <p>DOM manipulation involves using JavaScript to dynamically change HTML elements, their properties, content, and styling after the page has loaded.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <h3>Tabbed Content</h3>
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="events">Events</button>
+                        <button class="tab-btn" data-tab="dom">DOM</button>
+                        <button class="tab-btn" data-tab="validation">Validation</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="events-tab" class="tab-panel active">
+                            <h4>Event Handling</h4>
+                            <p>JavaScript events are actions that can be detected by your web page. Events can be triggered by user interactions, browser actions, or programmatically.</p>
+                            <ul>
+                                <li>Click events</li>
+                                <li>Keyboard events</li>
+                                <li>Mouse events</li>
+                                <li>Form events</li>
+                            </ul>
+                        </div>
+                        <div id="dom-tab" class="tab-panel">
+                            <h4>DOM Manipulation</h4>
+                            <p>The Document Object Model (DOM) represents the page structure. JavaScript can modify it to create dynamic content.</p>
+                            <ul>
+                                <li>Adding/removing elements</li>
+                                <li>Changing content</li>
+                                <li>Modifying attributes</li>
+                                <li>Updating styles</li>
+                            </ul>
+                        </div>
+                        <div id="validation-tab" class="tab-panel">
+                            <h4>Form Validation</h4>
+                            <p>Client-side validation provides immediate feedback to users and improves user experience before data is sent to the server.</p>
+                            <ul>
+                                <li>Required field validation</li>
+                                <li>Format validation (email, phone)</li>
+                                <li>Length validation</li>
+                                <li>Custom validation rules</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <h3>Hover Effects</h3>
+                <div class="hover-demo">
+                    <div class="hover-card" data-info="JavaScript">
+                        <h4>JS</h4>
+                        <p class="card-info">JavaScript makes pages interactive</p>
+                    </div>
+                    <div class="hover-card" data-info="HTML">
+                        <h4>HTML</h4>
+                        <p class="card-info">HTML provides page structure</p>
+                    </div>
+                    <div class="hover-card" data-info="CSS">
+                        <h4>CSS</h4>
+                        <p class="card-info">CSS handles visual styling</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>User Registration Form</h2>
+            <p>Fill out the form below to see custom JavaScript validation in action!</p>
+            
+            <form id="registration-form" novalidate>
+                <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    <div class="error-message" id="fullname-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <div class="error-message" id="phone-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="error-message" id="password-error"></div>
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill"></div>
+                        </div>
+                        <span class="strength-text">Password strength: Weak</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password *</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <div class="error-message" id="confirm-password-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="13" max="120">
+                    <div class="error-message" id="age-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="website">Website (Optional)</label>
+                    <input type="url" id="website" name="website">
+                    <div class="error-message" id="website-error"></div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <span class="checkmark"></span>
+                        I agree to the Terms and Conditions *
+                    </label>
+                    <div class="error-message" id="terms-error"></div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <span class="checkmark"></span>
+                        Subscribe to newsletter
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="clear-form" class="btn btn-secondary">Clear Form</button>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+
+            <div id="form-success" class="success-message" style="display: none;">
+                <h3>Registration Successful!</h3>
+                <p>Thank you for registering. Your account has been created successfully.</p>
+            </div>
+        </section>
+
+        <section class="keyboard-section">
+            <h2>Keyboard Events Demo</h2>
+            <div class="keyboard-demo">
+                <p>Type in the box below and see real-time feedback:</p>
+                <textarea id="typing-area" placeholder="Start typing to see character count and key detection..."></textarea>
+                <div class="typing-stats">
+                    <p>Characters: <span id="char-count">0</span></p>
+                    <p>Words: <span id="word-count">0</span></p>
+                    <p>Last key pressed: <span id="last-key">None</span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
